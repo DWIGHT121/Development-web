@@ -1,2 +1,14 @@
-from flask import Flask
-app = 
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/basics')
+def demo():
+    return "<h1> Sajjan Bro</h1>"
+
+@app.route('/home')
+def homepage():
+    return render_template("homepage.html")
+
+if(__name__)== "__main__":
+    app.run(debug=True)
