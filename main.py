@@ -1,10 +1,14 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
+
+db = SQLAlchemy(app)
 
 @app.route('/')
 @app.route('/basics')
 def demo():
-    return "<h1> Sajjan Bro</h1>"
+    return render_template("demo.html")
 
 @app.route('/home')
 def homepage():
